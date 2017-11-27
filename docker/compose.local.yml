@@ -1,0 +1,17 @@
+version: '2'
+services:
+  # Worker
+  worker:
+    build:
+      context: ../
+    restart: always
+    links:
+      - redis
+    volumes:
+      - ../.:/app
+    env_file: ../.env
+    command: php artisan queue:work --tries=3 --sleep=2
+  # Redis
+  redis:
+    image: redis:alpine
+    restart: always

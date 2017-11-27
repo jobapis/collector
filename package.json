@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "scripts": {
+    "app:artisan": "docker exec -it collector_worker_1 php artisan ",
+    "app:collect": "npm run -s app:artisan -- collector:start",
+    "app:archive": "npm run -s app:artisan -- collector:archive",
+    "app:local:build": "docker-compose -p collector -f docker/compose.local.yml build",
+    "app:local:up": "docker-compose -p collector -f docker/compose.local.yml up -d",
+    "app:local:down": "docker-compose -p collector -f docker/compose.local.yml down",
+    "app:test": "docker exec -it collector_worker_1 vendor/bin/phpunit",
+    "composer:install": "docker run --rm -v $(pwd):/app composer:latest install",
+    "composer:update": "docker run --rm -v $(pwd):/app composer:latest update",
+    "composer:dump": "docker run --rm -v $(pwd):/app composer:latest dump-autoload"
+  }
+}
