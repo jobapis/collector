@@ -1,4 +1,5 @@
-# Jobs Hub Collector
+# [![JobApis.com](https://i.imgur.com/9VOAkrZ.png)](https://www.jobapis.com) Jobs Hub Collector
+#### Aggregate jobs from various job boards and store results in one central hub
 
 This project collects jobs from various job boards using the JobApis [JobsMulti](https://github.com/jobapis/jobs-multi) library. Jobs are stored in [Algolia](https://www.algolia.com/) and old jobs may be archived in [Amazon S3](https://aws.amazon.com/s3/). This project uses the [Laravel PHP framework](https://laravel.com/).
 
@@ -41,3 +42,17 @@ While deploying this project will depend on your server configuration, the proce
 - Run the image with a worker and redis cache connected (either another container or an external DB)
 
 Finally, you can create cron jobs to run the collection or archival process as needed, or you can run them manually within the Docker container.
+
+## Legal
+
+### Disclaimer
+
+This package is not affiliated with or supported by any job boards and we are not responsible for any use or misuse of this software.
+
+### License
+
+This package uses the Apache 2.0 license. Please see the [License File](https://www.jobapis.com/license/) for more information.
+
+### Copyright
+
+Copyright 2017, [Karl L. Hughes](https://www.github.com/karllhughes).
